@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+// Colors
+$Pink: #ff52bf;
+$Light_Pink: #ff8fd8;
+$Light_Red: #ff4242;
+
+$Very_Dark_Cyan: #00252e;
+$Very_Pale_Blue: #f5faff;
+
+// Typography
+
+// Headings
+
+$H-Family: "Poppins", sans-serif;
+
+// Body
+
+$B-Family: "Open Sans", sans-serif;
+
+// Mixins
+@mixin flex {
+  display: flex;
+  @content;
+}
+
+body {
+  font-family: $B-Family;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+nav {
+  padding: 1rem 1.5rem;
+  @include flex();
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 40%;
+  }
+  button {
+    color: $Light_Pink;
+    background-color: transparent;
+    border: 1px $Light_Pink solid;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: small;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  text-align: center;
+  h1 {
+    font-family: $H-Family;
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  button {
+    color: $Very_Pale_Blue;
+    background-color: $Pink;
+    border-radius: 2rem;
+    border: none;
+    padding: 1rem 3rem;
+    font-weight: 600;
+  }
+}
+
+.sample img {
+  padding: 10rem 2rem;
+  width: 100%;
+}
+
+.numbers {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.community {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  img {
+    width: 15%;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  span {
+    color: #00252e9c;
+    align-self: center;
+  }
+}
+.messages {
+  @extend .community;
+}
+
+article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+//   gap: 5rem;
+}
+.grow {
+//   padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+article img {
+  width: 100%;
+}
