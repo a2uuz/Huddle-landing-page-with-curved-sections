@@ -28,6 +28,16 @@ $B-Family: "Open Sans", sans-serif;
 // Mixins
 @mixin flex {
   display: flex;
+  flex-direction: column;
+  @content;
+}
+
+@mixin pinkButton {
+  color: $Very_Pale_Blue;
+  background-color: $Pink;
+  border-radius: 2rem;
+  border: none;
+  font-weight: 600;
   @content;
 }
 
@@ -36,20 +46,20 @@ body {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  @include flex;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  gap: 4rem;
 }
 
 nav {
+  width: 100%;
   padding: 1rem 1.5rem;
-  @include flex();
+  display: flex;
   justify-content: space-between;
   align-items: center;
   img {
-    width: 40%;
+    width: 8rem;
   }
   button {
     color: $Light_Pink;
@@ -62,8 +72,7 @@ nav {
 }
 
 .info {
-  display: flex;
-  flex-direction: column;
+  @include flex;
   justify-content: center;
   align-items: center;
   width: 80%;
@@ -77,30 +86,26 @@ nav {
     margin-bottom: 2rem;
   }
   button {
-    color: $Very_Pale_Blue;
-    background-color: $Pink;
-    border-radius: 2rem;
-    border: none;
-    padding: 1rem 3rem;
-    font-weight: 600;
+    @include pinkButton();
+    padding: 0.9rem 3rem;
   }
 }
 
 .sample img {
-  padding: 10rem 2rem;
+  padding: 5rem 2rem;
   width: 100%;
 }
 
 .numbers {
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 5rem;
+
+  @include flex;
   gap: 5rem;
 }
 
 .community {
-  display: flex;
-  flex-direction: column;
+  @include flex;
   align-items: flex-start;
   img {
     width: 15%;
@@ -119,18 +124,87 @@ nav {
 
 article {
   position: relative;
-  display: flex;
-  flex-direction: column;
-//   gap: 5rem;
+  @include flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
 }
 .grow {
-//   padding: 5rem 1rem;
+  width: 80%;
+  line-height: 1.5rem;
+  text-align: center;
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  gap: 2rem;
-}
+  gap: 3rem;
 
+  .description {
+    @include flex;
+    gap: 1rem;
+  }
+}
+.flowing {
+  @extend .grow;
+}
+.users {
+  @extend .grow;
+}
 article img {
   width: 100%;
+}
+
+.getStarted {
+  text-align: center;
+  @include flex();
+  align-items: center;
+  gap: 2rem;
+
+  margin: 10rem 0;
+  button {
+    @include pinkButton();
+    padding: 0.8rem 3rem;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: $Very_Dark_Cyan;
+  color: $Very_Pale_Blue;
+  padding: 2rem 1rem;
+  gap: 5rem;
+}
+
+.newsletter {
+  @include flex();
+  gap: 1.5rem;
+
+  h3 {
+    font-size: 1.5rem;
+    text-transform:uppercase;
+  }
+}
+
+form {
+  @include flex();
+  gap: 1rem;
+  input {
+    padding: .9rem;
+    border-radius: 0.5rem;
+    border: none;
+  }
+  button {
+    width: 50%;
+    font-size: 1.2rem;
+    align-self: flex-end;
+    @include pinkButton();
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.socials{
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
 }
