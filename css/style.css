@@ -274,7 +274,7 @@ form button {
   border-radius: 0.5rem;
 }
 
-.socials {
+.contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -282,6 +282,6 @@ form button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 10vh;
+  gap: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
