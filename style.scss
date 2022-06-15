@@ -203,8 +203,8 @@ form {
   }
 }
 
-.socials{
-  display: flex;
-  flex-direction: column;
-  height: 10vh;
+.contact{
+  @include flex();
+  gap: 2rem;
+
 }
