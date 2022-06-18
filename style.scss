@@ -168,28 +168,26 @@ article img {
 
 footer {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   background-color: $Very_Dark_Cyan;
   color: $Very_Pale_Blue;
   padding: 2rem 1rem;
   gap: 5rem;
 }
-
 .newsletter {
   @include flex();
   gap: 1.5rem;
 
   h3 {
     font-size: 1.5rem;
-    text-transform:uppercase;
+    text-transform: uppercase;
   }
 }
-
 form {
   @include flex();
   gap: 1rem;
   input {
-    padding: .9rem;
+    padding: 0.9rem;
     border-radius: 0.5rem;
     border: none;
   }
@@ -202,9 +200,33 @@ form {
     border-radius: 0.5rem;
   }
 }
-
-.contact{
+.contact {
   @include flex();
   gap: 2rem;
-
+}
+.mail, .tell{
+  display: flex;
+  gap: 1rem;
+}
+.icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  i:nth-child(1) {
+    background-color: white;
+    color: #00252e;
+    padding: 0.2rem 0.1rem 0.2rem 0.5rem;
+    border-radius: 0.2rem;
+  }
+  i:nth-child(2) {
+    background-color: #00252e;
+    color: white;
+    transform: scale(1.5);
+  }
+  i:nth-child(3) {
+    background-color: white;
+    color: #00252e;
+    padding: .2rem;
+    border-radius: 0.2rem;
+  }
 }
