@@ -40,15 +40,18 @@ $B-Family: "Open Sans", sans-serif;
   font-weight: 600;
   @content;
 }
+@mixin buttonHover {
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    @content;
+  }
+}
 
 body {
   font-family: $B-Family;
 }
 
-//  button:hover > *{
-//   opacity: .5;
-//   cursor: pointer;
-//   }
 main {
   @include flex;
   justify-content: center;
@@ -65,11 +68,6 @@ main {
     background: center url("../images/bg-footer-top-desktop.svg") no-repeat;
     background-size: 100% 100%;
   }
-}
-
-button * {
-  opacity: 0.2;
-  cursor: pointer;
 }
 
 nav {
@@ -89,6 +87,7 @@ nav {
     border-radius: 1rem;
     padding: 0.5rem 1rem;
     font-size: small;
+    @include buttonHover();
   }
 }
 
@@ -108,6 +107,7 @@ nav {
   }
   button {
     @include pinkButton();
+    @include buttonHover();
     padding: 0.9rem 3rem;
   }
 }
@@ -184,21 +184,9 @@ article img {
 
   button {
     @include pinkButton();
+    @include buttonHover();
     padding: 0.8rem 3rem;
   }
-
-  // position: relative;
-
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   width: 100%;
-  //   height: 158px;
-  //   background: center url("../images/bg-section-bottom-desktop-1.svg")
-  //     no-repeat;
-  //   background-size: 100% 100%;
-  // }
 }
 
 footer {
@@ -231,6 +219,7 @@ form {
     font-size: 1.2rem;
     align-self: flex-end;
     @include pinkButton();
+    @include buttonHover();
     padding: 0.8rem;
     border-radius: 0.5rem;
   }
@@ -258,12 +247,23 @@ form {
     background-color: #00252e;
     color: white;
     transform: scale(1.5);
+
+    &:hover{
+    color: rgb(0, 195, 255);
+    background-color: #00252e;
+    cursor: pointer;
+  }
+    
   }
   i:nth-child(3) {
     background-color: white;
     color: #00252e;
     padding: 0.2rem;
     border-radius: 0.2rem;
+  }
+  i:hover{
+    background-color: rgb(0, 195, 255);
+    cursor: pointer;
   }
 }
 
