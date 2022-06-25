@@ -98,11 +98,13 @@ nav {
   width: 80%;
   text-align: center;
   h1 {
+    color: $Very_Dark_Cyan;
     font-family: $H-Family;
     font-size: 1.5rem;
   }
   p {
     font-size: 0.9rem;
+    color: $Very_Dark_Cyan;
     margin-bottom: 2rem;
   }
   button {
@@ -248,12 +250,11 @@ form {
     color: white;
     transform: scale(1.5);
 
-    &:hover{
-    color: rgb(0, 195, 255);
-    background-color: #00252e;
-    cursor: pointer;
-  }
-    
+    &:hover {
+      color: rgb(0, 195, 255);
+      background-color: #00252e;
+      cursor: pointer;
+    }
   }
   i:nth-child(3) {
     background-color: white;
@@ -261,7 +262,7 @@ form {
     padding: 0.2rem;
     border-radius: 0.2rem;
   }
-  i:hover{
+  i:hover {
     background-color: rgb(0, 195, 255);
     cursor: pointer;
   }
@@ -280,7 +281,8 @@ form {
       font-size: 2.5rem;
     }
     p {
-      width: 40%;
+      font-size: 1.1rem;
+      width: 50%;
       line-height: 1.5;
     }
     button {

@@ -90,12 +90,14 @@ nav button:hover {
 }
 
 .info h1 {
+  color: #00252e;
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
 }
 
 .info p {
   font-size: 0.9rem;
+  color: #00252e;
   margin-bottom: 2rem;
 }
 
@@ -379,7 +381,8 @@ form button:hover {
     font-size: 2.5rem;
   }
   .info p {
-    width: 40%;
+    font-size: 1.1rem;
+    width: 50%;
     line-height: 1.5;
   }
   .info button {
